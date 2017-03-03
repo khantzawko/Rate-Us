@@ -14,30 +14,87 @@ class MainViewController: UIViewController {
     
     var ref: FIRDatabaseReference!
 
+    @IBOutlet weak var excellentEmoji: UIButton!
+    @IBOutlet weak var excellentButton: UIButton!
+    @IBOutlet weak var goodEmoji: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var averageEmoji: UIButton!
+    @IBOutlet weak var averageButton: UIButton!
+    @IBOutlet weak var badEmoji: UIButton!
+    @IBOutlet weak var badButton: UIButton!
+    @IBOutlet weak var terribleEmoji: UIButton!
+    @IBOutlet weak var terribleButton: UIButton!
+    
+    @IBOutlet weak var thankyouLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ref = FIRDatabase.database().reference()
-        let ratingTitle = "testing"
-        self.ref.child("rating").setValue(["ratingTitle": ratingTitle])
+
+                
+        excellentEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        excellentButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
         
-        // Do any additional setup after loading the view.
+        goodEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        goodButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        
+        averageEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        averageButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        
+        badEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        badButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        
+        terribleEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        terribleButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
+        
+        thankyouLabel.alpha = 0
     }
+    
+    func pressButton(button: UIButton) {
+        
+        if button.titleLabel?.text == "Excellent" || button.titleLabel?.text == "😍" {
+            updateRating(text: "Excellent")
+        } else if button.titleLabel?.text == "Good" || button.titleLabel?.text == "😊"{
+            updateRating(text: "Good")
+        } else if button.titleLabel?.text == "Average" || button.titleLabel?.text == "🙂"{
+            updateRating(text: "Average")
+        } else if button.titleLabel?.text == "Bad" || button.titleLabel?.text == "😕"{
+            updateRating(text: "Bad")
+        } else if button.titleLabel?.text == "Terrible" || button.titleLabel?.text == "😡"{
+            updateRating(text: "Terrible")
+        } else {
+            print("error")
+        }
+    }
+    
+    func updateRating(text: String) {
+        ref = FIRDatabase.database().reference()
+        
+        let date = "03/03/2017"
+        let key = ref.childByAutoId().key
+        
+        let post = ["date": date]
+        let childUpdates = ["/the-testing-one/\(text)/\(key)": post]
+        ref.updateChildValues(childUpdates)
+        
+        thankyouLabel.alpha = 1
+        self.view.isUserInteractionEnabled = false
+
+        let myTimer : Timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.myPerformeCode), userInfo: nil, repeats: false)
+    }
+    
+    func myPerformeCode() {
+        thankyouLabel.alpha = 0
+        self.view.isUserInteractionEnabled = true
+    }
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
