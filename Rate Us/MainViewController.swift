@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
         thankyouLabel.alpha = 1
         self.view.isUserInteractionEnabled = false
 
-        let myTimer : Timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.myPerformeCode), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.myPerformeCode), userInfo: nil, repeats: false)
     }
     
     func myPerformeCode() {
