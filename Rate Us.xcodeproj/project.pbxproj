@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140BE9E21E6A8994007D65DD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BE9E11E6A8994007D65DD /* StatisticsViewController.swift */; };
 		148619DA1E66E6810078F908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148619D91E66E6810078F908 /* AppDelegate.swift */; };
 		148619DF1E66E6810078F908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148619DD1E66E6810078F908 /* Main.storyboard */; };
 		148619E21E66E6810078F908 /* Rate_Us.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 148619E01E66E6810078F908 /* Rate_Us.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 		148619FD1E66E6820078F908 /* Rate_UsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148619FC1E66E6820078F908 /* Rate_UsUITests.swift */; };
 		14ABF64B1E674EEB00DA4631 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14ABF64A1E674EEB00DA4631 /* GoogleService-Info.plist */; };
 		14ABF64D1E674F6A00DA4631 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABF64C1E674F6A00DA4631 /* MainViewController.swift */; };
+		14B048A21E6A9A8700115F9E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B048A11E6A9A8700115F9E /* Charts.framework */; };
 		59B88ABABEE170064D41EC0E /* Pods_Rate_UsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8314414B6533C0ED490862 /* Pods_Rate_UsUITests.framework */; };
 		A3CD3F8FAD1F380B2B73C8CC /* Pods_Rate_UsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34766D14ABEC8585213514B2 /* Pods_Rate_UsTests.framework */; };
 		DA0B6DF71212CE0389198637 /* Pods_Rate_Us.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C105C3B6FF14D54063D87249 /* Pods_Rate_Us.framework */; };
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140BE9E11E6A8994007D65DD /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		148619D61E66E6810078F908 /* Rate Us.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate Us.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		148619D91E66E6810078F908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148619DE1E66E6810078F908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		148619FE1E66E6820078F908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14ABF64A1E674EEB00DA4631 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14ABF64C1E674F6A00DA4631 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14B048A11E6A9A8700115F9E /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../Library/Developer/Xcode/DerivedData/Rate_Us-fxeovcnpzmyhbretpacxpsikaspn/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
 		34766D14ABEC8585213514B2 /* Pods_Rate_UsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rate_UsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8314414B6533C0ED490862 /* Pods_Rate_UsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rate_UsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		949977ADAE722EE734C7DD25 /* Pods-Rate UsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rate UsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rate UsTests/Pods-Rate UsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B048A21E6A9A8700115F9E /* Charts.framework in Frameworks */,
 				DA0B6DF71212CE0389198637 /* Pods_Rate_Us.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +101,7 @@
 		0097F5436D962BC9231A56D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14B048A11E6A9A8700115F9E /* Charts.framework */,
 				C105C3B6FF14D54063D87249 /* Pods_Rate_Us.framework */,
 				34766D14ABEC8585213514B2 /* Pods_Rate_UsTests.framework */,
 				8A8314414B6533C0ED490862 /* Pods_Rate_UsUITests.framework */,
@@ -130,6 +136,7 @@
 			children = (
 				148619D91E66E6810078F908 /* AppDelegate.swift */,
 				148619DD1E66E6810078F908 /* Main.storyboard */,
+				140BE9E11E6A8994007D65DD /* StatisticsViewController.swift */,
 				14ABF64C1E674F6A00DA4631 /* MainViewController.swift */,
 				148619E31E66E6810078F908 /* Assets.xcassets */,
 				148619E51E66E6810078F908 /* LaunchScreen.storyboard */,
@@ -459,6 +466,7 @@
 				14ABF64D1E674F6A00DA4631 /* MainViewController.swift in Sources */,
 				148619E21E66E6810078F908 /* Rate_Us.xcdatamodeld in Sources */,
 				148619DA1E66E6810078F908 /* AppDelegate.swift in Sources */,
+				140BE9E21E6A8994007D65DD /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@ target 'Rate Us' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-
+  pod 'Charts'
   # Pods for Rate Us
 
   target 'Rate UsTests' do

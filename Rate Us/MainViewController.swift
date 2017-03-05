@@ -30,8 +30,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-                
         excellentEmoji.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
         excellentButton.addTarget(self, action: #selector(self.pressButton(button:)), for: .touchUpInside)
         
@@ -70,27 +68,32 @@ class MainViewController: UIViewController {
     func updateRating(text: String) {
         ref = FIRDatabase.database().reference()
         
-        let date = "03/03/2017"
+        // setting local date and time
+        let today = Date()
+
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "MMM dd yyyy"
+        let date = formatter.string(from: today)
+        formatter.dateFormat = "hh:mm:ss +zzzz"
+        let time = formatter.string(from: today)
+        
+
         let key = ref.childByAutoId().key
         
-        let post = ["date": date]
-        let childUpdates = ["/the-testing-one/\(text)/\(key)": post]
+        let post = ["time": time]
+        let childUpdates = ["/the-testing-one/\(text)/\(date)/\(key)": post]
         ref.updateChildValues(childUpdates)
         
         thankyouLabel.alpha = 1
         self.view.isUserInteractionEnabled = false
 
-        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.myPerformeCode), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.myPerformeCode), userInfo: nil, repeats: false)
     }
     
     func myPerformeCode() {
         thankyouLabel.alpha = 0
         self.view.isUserInteractionEnabled = true
     }
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
